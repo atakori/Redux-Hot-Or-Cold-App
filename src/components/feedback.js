@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import './feedback.css';
 
@@ -26,3 +27,5 @@ export default function Feedback(props) {
     </h2>
   );
 }
+
+
