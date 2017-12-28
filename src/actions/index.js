@@ -5,13 +5,11 @@ export const makeGuess = guess => ({
 });
 
 export const RESTART_GAME = 'RESTART_GAME';
-export const restartGame = () => {
-	type: RESTART_GAME,
-	restartGame
-}
+export const restartGame = () => ({
+	type: RESTART_GAME
+})
 
 export const GENERATE_AURAL_UPDATE = 'GENERATE_AURAL_UPDATE';
-export const generateAuralUpdate = () => {
-	type: GENERATE_AURAL_UPDATE,
-	generateAuralUpdate
-}
+export const generateAuralUpdate = () => ({
+	type: GENERATE_AURAL_UPDATE
+})

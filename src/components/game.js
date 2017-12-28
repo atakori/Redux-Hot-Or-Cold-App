@@ -6,42 +6,15 @@ import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
 
-export class Game extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { feedback, guesses, auralStatus } = this.state;
-    const guessCount = guesses.length;
-
+export default function Game(props) {
     return (
       <div>
-        <Header
-          onRestartGame={() => this.restartGame()}
-          onGenerateAuralUpdate={() => this.generateAuralUpdate()}
-        />
+        <Header/>
         <main role="main">
-          <GuessSection
-            feedback={feedback}
-            guessCount={guessCount}
-            onMakeGuess={guess => this.makeGuess(guess)}
-          />
-          <StatusSection guesses={guesses} 
-            auralStatus={auralStatus}
-          />
+          <GuessSection/>
+          <StatusSection/>
           <InfoSection />
         </main>
       </div>
     );
   }
-}
-
-export const mapStateToProps = state => ({
-  guesses: state.guesses,
-  feedback: state.feedback,
-  auralStatus: state.auralStatus,
-  correctAnswer: state.correctAnswer
-})
-
-export default connect(mapStateToProps)(Game);
